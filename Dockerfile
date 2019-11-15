@@ -7,3 +7,5 @@ RUN apt-get update && apt install -y \
     iputils-ping
 RUN conda create -n mp -c conda-forge pymeep -y
 USER jovyan
+RUN mkdir -p ~/.ssh
+COPY engineer.pub /home/jovyan/.ssh/id_rsa.pub
